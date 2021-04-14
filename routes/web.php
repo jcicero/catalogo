@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Livewire\CategoryCreate;
+use App\Http\Livewire\Counter;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/categorias',CategoryCreate::class)->name('categorias');
+Route::get('/counter',Counter::class)->name('counter');
