@@ -26,6 +26,7 @@ class CategoryCreate extends Component
             'categoria' => $this->categoria]);
         
         $this->categoria = null;
+        $this->emit('updateCategory');
 
         session()->flash('message', 'Categoria cadastrada com sucesso.');
     }

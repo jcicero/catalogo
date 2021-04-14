@@ -39,7 +39,7 @@
                 <b>{{ $title }}</b>
             </div>
             <div class="card-body">
-                {{ $categoria }}
+                <livewire:categories-show />
             </div>
         </div>
     </div>
