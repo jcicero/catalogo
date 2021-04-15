@@ -20,6 +20,8 @@ class CreateProductsTable extends Migration
             $table->string('resumida',200)->nullable();
             $table->integer('codigo');
             $table->string('apresentacao',80)->nullable();
+            $table->string('classification',5)->nullable();
+            $table->string('img_photo_path')->nullable();
             $table->foreignId('category_id')->constrained();
         });
     }
