@@ -10,8 +10,8 @@
                 <thead>
                     <tr>
                     <th scope="col">Código</th>
-                    <th scope="col">Descrição Completa</th>
                     <th scope="col">Descrição Resumida</th>
+                    <th scope="col">Descrição Completa</th>
                     <th scope="col">Apresentação</th>
                     <th scope="col">XYZ</th>
                     <th scope="col">Ações</th>
@@ -21,12 +21,12 @@
                     @foreach ($products as $product)
                         <tr>
                             <td>{{ $product->codigo}}</td>
-                            <td>{{ $product->descricao}}</td>
                             <td>{{ $product->resumida}}</td>
+                            <td>{{ $product->descricao}}</td>
                             <td>{{ $product->apresentacao}}</td>
                             <td>{{ $product->classification}}</td>
                             <td>
-                                <a href="#"> 
+                                <a href="{{ route('produto.show',$product->id) }}"> 
                                     <i class="bi bi-eye-fill btn btn-outline-success btn-sm"></i>
                                 </a>
                             </td>

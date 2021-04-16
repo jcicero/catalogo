@@ -5,13 +5,13 @@ namespace App\Http\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 
-class ProductsShow extends Component
+class ProductsList extends Component
 {
     public $title = 'Produtos';
 
     public function render()
     {
-        return view('livewire.products-show', [
+        return view('livewire.products-list', [
             'products' => Product::orderBy('descricao')->get(),
         ])
         ->extends('layouts.app')
