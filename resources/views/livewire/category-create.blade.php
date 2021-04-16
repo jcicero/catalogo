@@ -11,7 +11,7 @@
                     <div class="form-inline">
                         <label for="categoria">Categoria: </label>
                         <input wire:model="categoria" type="text" class="form-control" >
-                        <button type="submit" class="btn btn-success">Cadastrar</button> 
+                        <button type="submit" class="btn btn-success"> <i class="bi bi-plus-circle"></i> Cadastrar</button> 
                     </div>
                     <br>
                     @if ($errors->any())
