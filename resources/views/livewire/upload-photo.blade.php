@@ -9,9 +9,22 @@
  <div class="controls form-inline">
     <input type="file" class="form-control" id="customFile" wire:model="photo"/>
     <button class="btn btn-primary" type="submit">Salvar</button>
-        @error('photo') <span class="error">{{ $message }}</span> @enderror
     </form>
 </div>
 </div>
+                    @if ($errors->any())
+                        <ul>
+                            <div class="alert alert-danger col-md-3" role="alert">
+                                @error('photo')
+                                    {{ $message }}
+                                @enderror
+                            </div>
+                        </ul> 
+                    @endif 
+                    @if (session()->has('message'))
+                        <div class="alert alert-success col-md-3" role="alert">
+                            {{ session('message') }}
+                        </div>
+                    @endif 
 
 </div>

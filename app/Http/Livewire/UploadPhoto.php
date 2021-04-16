@@ -13,6 +13,15 @@ class UploadPhoto extends Component
     public $photo;
     public $product;
 
+    protected $rules = [
+        'photo' => 'required|image|max:1024', // 1MB Max
+    ];
+
+    protected $messages = [
+        'photo.required' => 'Selecione uma imagem',
+        'photo.image' => 'Formato aceito (jpg, png, svg)',
+        'photo.max' => 'Tamanho máximo da imagem 1mb (1024kb)',
+        ];
 
     public function render()
     {
@@ -21,9 +30,7 @@ class UploadPhoto extends Component
 
     public function save()
     {
-        $this->validate([
-            'photo' => 'required|image|max:1024', // 1MB Max
-        ]);
+        $this->validate();
 
         $produto = $this->product;
 
@@ -33,6 +40,9 @@ class UploadPhoto extends Component
             $produto->update([
                 'img_photo_path' => $path,
             ]);
+
+        session()->flash('message', 'Imagem enviada com sucesso.');
+
         }
         
     }
