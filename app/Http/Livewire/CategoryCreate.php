@@ -11,11 +11,12 @@ class CategoryCreate extends Component
     public $categoria;
 
     protected $rules = [
-        'categoria' => 'required',
+        'categoria' => ['required','unique:categories,categoria'],
     ];
 
     protected $messages = [
             'categoria.required' => 'Informe a CATEGORIA!',
+            'categoria.unique' => 'Essa categoria já existe.',
         ];
 
     public function create()
