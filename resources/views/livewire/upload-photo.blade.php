@@ -1,6 +1,8 @@
 <div>
 
-    <img src="{{ url("storage/{$product->photo}") }}?{{ rand() }}" width="500" height="500" class="img-thumbnail img-responsive" alt="...">
+    @if ($product->photo)
+        <img src="{{ url("storage/{$product->photo}") }}?{{ rand() }}" width="500" height="500" class="img-thumbnail img-responsive" alt="...">    
+    @endif
 
     <form wire:submit.prevent="save" method="post">
         {{--<input type="file" class="form-control-file" wire:model="photo">--}}
