@@ -63,7 +63,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('categorias') }}">Categorias</a>
-                  <a class="dropdown-item" href="{{ route('counter') }}">Marcas</a>
+                  <a class="dropdown-item" href="{{ route('marcas') }}">Marcas</a>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
