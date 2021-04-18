@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<br>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
-          <div class="card-header">{{ __('Dashboard') }}</div>
+          <div class="card-header">{{ __('Novidades') }}</div>
 
           <div class="card-body">
             @if (session('status'))
@@ -13,9 +14,12 @@
                 {{ session('status') }}
               </div>
             @endif
-            <livewire:counter />
+            <ul>
+              <li>Cadastro de Marcas</li>
+              <li>Inclusão de fotos</li>
+              <li>Marcas aprovadas por produto</li>
+            </ul>
 
-            {{ __('You are logged in!') }}
           </div>
         </div>
       </div>
