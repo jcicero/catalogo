@@ -28,4 +28,9 @@ class Product extends Model
   {
     return $this->img_photo_path;
   }
+
+  public function brands()
+  {
+      return $this->belongsToMany(Brand::class)->withTimestamps();
+  }
 }

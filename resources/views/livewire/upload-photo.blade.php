@@ -10,7 +10,7 @@
     <div class="form-group">
       <div class="controls form-inline">
         <input type="file" class="form-control" id="customFile" wire:model="photo" />
-        <button class="btn btn-primary form-control" type="submit"><i class="bi bi-image"></i> Salvar</button>
+        <button class="btn btn-success form-control" type="submit"><i class="bi bi-image"></i> Salvar</button>
       </div>
     </div>
   </form>
