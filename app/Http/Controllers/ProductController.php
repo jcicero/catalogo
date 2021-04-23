@@ -36,7 +36,7 @@ class ProductController extends Controller
 
   public function show($id)
   {
-    $brands = Brand::all();
+    $brands = Brand::orderBy('marca')->get();
 
     $product = Product::find($id);
 
