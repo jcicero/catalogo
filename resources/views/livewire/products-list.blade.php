@@ -13,7 +13,7 @@
               <th scope="col">Descrição Resumida</th>
               <th scope="col">Descrição Completa</th>
               <th scope="col">Apresentação</th>
-              <th scope="col">XYZ</th>
+              <th scope="col">Imagem</th>
               <th scope="col">Ações</th>
             </tr>
           </thead>
@@ -24,7 +24,14 @@
                 <td>{{ $product->resumida }}</td>
                 <td>{{ $product->descricao }}</td>
                 <td>{{ $product->apresentacao }}</td>
-                <td>{{ $product->classification }}</td>
+                <td>
+                    @if ($product->photo)
+                    <a href="{{ url("storage/{$product->photo}") }}">
+                      <img src="{{ url("storage/{$product->photo}") }}?{{ rand() }}" width="500" height="500"
+                        class="img-thumbnail img-responsive" alt="...">
+                    </a>
+                    @endif
+                </td>
                 <td>
                   <a href="{{ route('produto.show', $product->id) }}">
                     <i class="bi bi-eye-fill btn btn-outline-success btn-sm"></i>
