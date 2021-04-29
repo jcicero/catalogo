@@ -11,7 +11,7 @@ class ProductController extends Controller
 
   public function index(Request $request)
   {
-//
+    //
   }
 
   public function create()
@@ -31,7 +31,6 @@ class ProductController extends Controller
     $product->brands()->attach($brandId, ['user_id' => $userId]);
 
     return redirect()->back();
-
   }
 
   public function show($id)
@@ -40,7 +39,7 @@ class ProductController extends Controller
 
     $product = Product::find($id);
 
-    return view('productShow', compact('product','brands'));
+    return view('productShow', compact('product', 'brands'));
   }
 
   public function edit($id)
@@ -58,4 +57,15 @@ class ProductController extends Controller
     //
   }
 
+  public function pesquisar(Request $request)
+  {
+    dd($request);
+    $title = 'Produtos';
+    $product = Product::where('descricao', 'LIKE', "%{$request->search}%")
+      ->orWhere('resumida', 'LIKE', "%{$request->search}%")
+      ->orWhere('codigo', 'LIKE', "%{$request->search}%")->get();
+    $count = 1;
+
+    return view('livewire.products-list', compact('product', 'count', 'title'));
+  }
 }
