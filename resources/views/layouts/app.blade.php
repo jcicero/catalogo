@@ -63,6 +63,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('categorias') }}">Categorias</a>
+                  <a class="dropdown-item" href="{{ route('companies.index') }}">Empresas</a>
                   <a class="dropdown-item" href="{{ route('marcas') }}">Marcas</a>
               </li>
             </ul>
