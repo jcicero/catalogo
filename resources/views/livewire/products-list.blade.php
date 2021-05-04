@@ -12,6 +12,7 @@
         <table class="table table-hover">
           <thead>
             <tr>
+              <th scope="col">Categoria</th>
               <th scope="col">Código</th>
               <th scope="col">Descrição Resumida</th>
               <th scope="col">Descrição Completa</th>
@@ -23,6 +24,7 @@
           <tbody>
             @foreach ($products as $product)
               <tr>
+                <td>{{ $product->category->categoria }}</td>
                 <td>{{ $product->codigo }}</td>
                 <td>{{ $product->resumida }}</td>
                 <td>{{ $product->descricao }}</td>
