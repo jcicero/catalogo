@@ -17,4 +17,9 @@ class Company extends Model
       'url',
       'user_id'
     ];
+
+    public function brand()
+    {
+        return $this->hasMany(Brand::class);
+    }
 }
