@@ -9,6 +9,7 @@
           <input wire:model="search" class="form-control mr-sm-4" type="text" name="search" placeholder="Digite aqui para pesquisar" aria-label="Pesquisar">
          {{--  <button wire:click.prevent="pesquisar" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i>
             Pesquisar</button> --}}
+            <div class="table-responsive">
         <table class="table table-hover">
           <thead>
             <tr>
@@ -47,6 +48,7 @@
 
           </tbody>
         </table>
+            </div>
       </div>
     </div>
   </div>

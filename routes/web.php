@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Livewire\CategoryCreate;
 use App\Http\Livewire\BrandCreate;
 use App\Http\Livewire\Counter;
@@ -37,6 +38,7 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/marcas', BrandCreate::class)->name('marcas');
   Route::resource('produto', ProductController::class);
   Route::resource('companies', CompanyController::class);
+  Route::resource('notifications', NotificationController::class);
   Route::get('/produtos', ProductsList::class)->name('produtos');
   Route::get('/counter', Counter::class)->name('counter');
 });
