@@ -14,7 +14,7 @@ class AddCollumnActiveAndUserToProduct extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-          $table->foreignId('user_id')->constrained();
+          //$table->foreignId('user_id')->constrained();
           $table->boolean('active')->default(true);
         });
     }
