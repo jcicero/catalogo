@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
@@ -16,10 +17,29 @@ class ProductController extends Controller
 
   public function create()
   {
-    //
+    $title = 'Cadastrar Produto';
+
+    $categories = Category::orderBy('categoria','asc')->get();
+
+    return view('product.create',compact('title','categories'));
   }
 
   public function store(Request $request)
+  {
+    $product = $request->all();
+    $insert = Product::create($product);
+
+    session()->flash('message', 'Registro inserido com sucesso.');
+
+    if ($insert)
+     // return redirect()->back();
+      return redirect()->route('produto.show', $insert->id);
+    else {
+      return redirect()->back();
+    }
+  }
+
+  public function storebrand(Request $request)
   {
 
     $productId = $request->product_id;

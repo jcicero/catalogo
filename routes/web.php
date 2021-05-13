@@ -40,5 +40,6 @@ Route::middleware(['auth'])->group(function () {
   Route::resource('companies', CompanyController::class);
   Route::resource('notifications', NotificationController::class);
   Route::get('/produtos', ProductsList::class)->name('produtos');
+  Route::post('/produto/storebrand', [ProductController::class, 'storebrand'])->name('produto.storebrand');
   Route::get('/counter', Counter::class)->name('counter');
 });

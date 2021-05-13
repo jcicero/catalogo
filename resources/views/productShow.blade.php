@@ -33,7 +33,7 @@
           @endforelse
         </ul>
         <br>
-        <form class="form-inline" action="{{ route('produto.store') }}" method="post">
+        <form class="form-inline" action="{{ route('produto.storebrand') }}" method="post">
           @csrf
           <select class="form-control mr-sm-4" name="brand_id">
             <option selected disabled>Selecionar marca...:</option>

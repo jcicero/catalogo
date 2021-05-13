@@ -16,7 +16,9 @@ class Product extends Model
     'apresentacao',
     'classification',
     'img_photo_path',
-    'category_id'
+    'category_id',
+    'active',
+    'user_id'
   ];
 
   public function category()
