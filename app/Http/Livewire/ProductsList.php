@@ -14,7 +14,8 @@ class ProductsList extends Component
   public function pesquisar()
   {
     $title = 'Produtos';
-    $product = Product::where('descricao', '~*', $this->search)
+    $product = Product::with('category')
+    ->where('descricao', '~*', $this->search)
     ->orWhere('resumida', '~*', $this->search)
     ->orWhere('codigo', 'LIKE', "%{$this->search}%")->get();
     $count = 1;
@@ -24,7 +25,8 @@ class ProductsList extends Component
 
   public function render()
   {
-    $product = Product::where('descricao', '~*', $this->search)
+    $product = Product::with('category')
+    ->where('descricao', '~*', $this->search)
     ->orWhere('resumida', '~*', $this->search)
     ->orWhere('codigo', 'LIKE', $this->search)
     ->orderBy('descricao')
