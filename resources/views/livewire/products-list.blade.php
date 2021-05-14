@@ -10,6 +10,7 @@
           <a class="btn btn-success" href="{{ route('produto.create') }}" role="button"> <i class="bi bi-plus-circle"></i> Cadastrar</a>
         </p>
           <input wire:model="search" class="form-control mr-sm-4" type="text" name="search" placeholder="Digite aqui para pesquisar" aria-label="Pesquisar">
+          
          {{--  <button wire:click.prevent="pesquisar" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i>
             Pesquisar</button> --}}
             <div class="table-responsive">

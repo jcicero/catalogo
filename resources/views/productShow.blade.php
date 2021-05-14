@@ -54,5 +54,12 @@
 
       </div>
     </div>
+      <form class="form-inline" action="{{ route('produto.update',$product->id) }}" method="post">
+        @csrf
+        @method('PUT')
+        <input type="hidden" name="active" value="false">
+          <br><br><br>
+        <button type="submit" class="btn btn-outline-danger"> <i class="bi bi-trash"></i> Desativar</button>
+      </form>
   </div>
 @endsection
