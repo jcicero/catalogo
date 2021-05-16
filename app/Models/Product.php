@@ -35,4 +35,9 @@ class Product extends Model
   {
       return $this->belongsToMany(Brand::class)->withTimestamps();
   }
+
+  public function notifications()
+  {
+      return $this->hasMany(Notification::class);
+  }
 }

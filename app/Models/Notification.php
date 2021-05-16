@@ -23,4 +23,9 @@ class Notification extends Model
       'queixa',
       'user_id'
     ];
+
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
+    }
 }
