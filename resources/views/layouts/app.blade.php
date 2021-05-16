@@ -56,9 +56,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('produtos') }}">Produtos</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('notifications.index') }}">Notificar</a>
-              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
