@@ -18,6 +18,7 @@
               <li>Cadastro de Marcas</li>
               <li>Inclusão de fotos</li>
               <li>Marcas aprovadas por produto</li>
+              <li>Cadastrar notificações dos produtos</li>
             </ul>
 
           </div>
