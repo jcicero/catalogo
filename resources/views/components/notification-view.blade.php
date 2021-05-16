@@ -27,7 +27,8 @@
           <td>{{ $notification->validade }}</td>
         </tr>
         <tr>
-          <td colspan="9">{{ $notification->queixa }}</td>
+          <td><b>Queixa:</b></td>
+          <td colspan="8">{{ $notification->queixa }}</td>
         </tr>
       @endforeach
     </tbody>
