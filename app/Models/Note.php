@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Notification extends Model
+class Note extends Model
 {
     use HasFactory;
 
@@ -21,7 +21,9 @@ class Notification extends Model
       'lote',
       'validade',
       'queixa',
-      'user_id'
+      'user_id',
+      'email',
+      'produtodesc'
     ];
 
     public function brand()

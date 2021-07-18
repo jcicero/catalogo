@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class NotificationForm extends Component
+class NoteForm extends Component
 {
     public $product;
 
@@ -15,6 +15,6 @@ class NotificationForm extends Component
 
     public function render()
     {
-        return view('components.notification-form');
+        return view('components.note-form');
     }
 }

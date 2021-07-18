@@ -3,7 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CompanyController;
-use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\NoteController;
 use App\Http\Livewire\CategoryCreate;
 use App\Http\Livewire\BrandCreate;
 use App\Http\Livewire\Counter;
@@ -27,6 +27,9 @@ Route::get('/', function () {
   return view('auth.login');
 });
 
+//FORMULÁRIO PUBLICO PARA NOTICICAÇÕES
+  Route::get('/notificar', [NoteController::class, 'createPublic'])->name('notificar');
+  Route::post('/notificar', [NoteController::class, 'storePublic'])->name('notificar');
 
 Auth::routes();
 //Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -38,7 +41,7 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/marcas', BrandCreate::class)->name('marcas');
   Route::resource('produto', ProductController::class);
   Route::resource('companies', CompanyController::class);
-  Route::resource('notifications', NotificationController::class);
+  Route::resource('notes', NoteController::class);
   Route::get('/produtos', ProductsList::class)->name('produtos');
   Route::post('/produto/storebrand', [ProductController::class, 'storebrand'])->name('produto.storebrand');
   Route::get('/counter', Counter::class)->name('counter');

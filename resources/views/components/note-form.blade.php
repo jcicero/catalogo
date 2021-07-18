@@ -1,5 +1,5 @@
 <div>
-  <form class="form-group" action="{{ route('notifications.store') }}" method="post">
+  <form class="form-group" action="{{ route('notes.store') }}" method="post">
     @csrf
       <div class="form-row">
         <div class="form-group col-md-4">
