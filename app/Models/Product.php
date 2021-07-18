@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
   use HasFactory;
+
+  use LogsActivity;
 
   protected $fillable = [
     'descricao',
@@ -20,6 +23,8 @@ class Product extends Model
     'active',
     'user_id'
   ];
+
+  protected static $logAttributes = ['*'];
 
   public function category()
   {
