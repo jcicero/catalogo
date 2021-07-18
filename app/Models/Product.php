@@ -10,8 +10,6 @@ class Product extends Model
 {
   use HasFactory;
 
-  use LogsActivity;
-
   protected $fillable = [
     'descricao',
     'resumida',
