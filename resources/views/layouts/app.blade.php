@@ -19,6 +19,7 @@
 
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
   @livewireStyles
 </head>
 
@@ -84,14 +85,13 @@
                   </a>
 
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                      {{ __('Logout') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" class="d-none">
                       @csrf
+                        
                     </form>
+                      <a href="{{ url('/logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Sair') }} </a>
+
+                      <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">{{ csrf_field() }} </form>
                   </div>
                 </li>
               @endguest
@@ -103,7 +103,9 @@
     @yield('content')
 
   </div>
+  
   @livewireScripts
+
 </body>
 
 </html>

@@ -48,11 +48,11 @@
         <div class="collapse" id="collapseExample">
           <div class="card card-body">
             
-            <x-notification-form :product="$product" />
+            <x-note-form :product="$product" />
 
           </div>
         </div>
-        <x-notification-view :product="$product"/>
+        <x-note-view :product="$product"/>
       </div>
     </div>
       <form class="form-inline" action="{{ route('produto.update',$product->id) }}" method="post">
