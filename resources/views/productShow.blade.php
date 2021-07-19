@@ -27,7 +27,29 @@
         </p>
         <ul class="list-group">
           @forelse ($product->brands as $brand)
-            <li class="list-group-item">{{ $brand->marca }}</li>
+            <li class="list-group-item">
+              <form class="form-inline" action="{{ route('produto.detachbrand') }}" method="post">
+                @csrf
+                @method('POST')
+                  <input type="hidden" name="product_id" value="{{ $product->id }}">
+                  <input type="hidden" name="brand_id" value="{{ $brand->id }}">
+                  <input type="hidden" name="user_id" value="{{ $brand->pivot->user_id }}">
+                
+                  <div class="row">
+                    <div class="col-sm-9">
+                        <div class="raised-block">
+                          {{ $brand->marca }}
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="raised-block">
+                          <button type="submit" class="btn btn-outline-danger btn-sm"> <i class="bi bi-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+              
+                </form>
+            </li>
           @empty
 
           @endforelse

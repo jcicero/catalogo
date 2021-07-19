@@ -44,5 +44,6 @@ Route::middleware(['auth'])->group(function () {
   Route::resource('notes', NoteController::class);
   Route::get('/produtos', ProductsList::class)->name('produtos');
   Route::post('/produto/storebrand', [ProductController::class, 'storebrand'])->name('produto.storebrand');
+  Route::post('/produto/detachbrand', [ProductController::class, 'detachbrand'])->name('produto.detachbrand');
   Route::get('/counter', Counter::class)->name('counter');
 });

@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Note extends Model
 {
@@ -29,5 +30,10 @@ class Note extends Model
     public function brand()
     {
         return $this->belongsTo(Brand::class);
+    }
+
+    public function getDtOcorrenciaAttribute($value)
+    {
+        return Carbon::parse($value)->format('d/m/Y');
     }
 }

@@ -5,6 +5,21 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8">
+
+        @if($notes->isNotEmpty())
+          <div class="card" >
+            <div class="card-header">
+              {{ __('Notificações') }}
+            </div>
+            <ul class="list-group list-group-flush">
+              @foreach ($notes as $note)
+              <li class="list-group-item">{{ $note->dtocorrencia . ' - ' . $note->produtodesc }}</li>
+              @endforeach
+            </ul>
+          </div>
+          <br>
+        @endif
+
         <div class="card">
           <div class="card-header">{{ __('Novidades') }}</div>
 

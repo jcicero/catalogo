@@ -53,6 +53,19 @@ class ProductController extends Controller
     return redirect()->back();
   }
 
+  public function detachbrand(Request $request)
+  {
+    $productId = $request->product_id;
+    $brandId = $request->brand_id;
+    $userId = $request->user_id;
+
+    $product = Product::find($productId);
+
+    $product->brands()->detach($brandId, ['user_id' => $userId]);
+
+    return redirect()->back();
+  }
+
   public function show($id)
   {
     $brands = Brand::orderBy('marca')->get();

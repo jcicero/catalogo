@@ -15,15 +15,7 @@
         "laravel/ui": "^3.2",
         "livewire/livewire": "^2.4",
         "maatwebsite/excel": "^3.1",
-<<<<<<< HEAD
-<<<<<<< HEAD
         "spatie/laravel-backup": "^6.16"
-=======
-        "spatie/laravel-backup": "^7.6"
->>>>>>> bfa3e7912e363c989410f88abb8291b7e03a8d83
-=======
-        "spatie/laravel-activitylog": "^3.17"
->>>>>>> 4039b16382f3703376409b570419292f454d3350
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

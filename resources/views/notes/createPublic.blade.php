@@ -72,6 +72,8 @@
                 </div>
 
                 <input type="hidden" name="user_id" value="1">
+                <input type="hidden" name="isAceito" value="false">
+
                                     
                 <button class="btn btn-success form-control" type="submit"><i class="bi bi-image"></i> Salvar Notificação</button>
           

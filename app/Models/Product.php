@@ -36,7 +36,7 @@ class Product extends Model
 
   public function brands()
   {
-      return $this->belongsToMany(Brand::class)->withTimestamps();
+      return $this->belongsToMany(Brand::class)->withTimestamps()->withPivot('user_id');
   }
 
   public function notes()
