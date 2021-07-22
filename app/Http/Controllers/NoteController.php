@@ -51,6 +51,32 @@ class NoteController extends Controller
 
     public function storePublic(Request $request)
     {
+
+      $messages = [
+        'dtocorrencia.required' => 'Informe a data da ocorrência',
+        'setor.required' => 'Informe o setor',
+        'profissional.required' => 'Informe seu nome',
+        'email.required' => 'Informe seu e-mail',
+        'produtodesc.required' => 'Informe a descrição do produto',
+        'lote.required' => 'Informe o lote do produto',
+        'validade.required' => 'Informe a validade do produto',
+        'queixa.required' => 'Descreva sua queixa relacionada ao produto',
+
+    ];
+
+      $validated = $request->validate([
+        'dtocorrencia' => 'required',
+        'setor' => 'required',
+        'profissional' => 'required',
+        'email' => 'required|email',
+        'produtodesc' => 'required',
+        'lote' => 'required',
+        'validade' => 'required',
+        'queixa' => 'required'
+      ],$messages);
+
+
+
       $note = $request->all();
       $insert = Note::create($note);
   
