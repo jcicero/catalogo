@@ -46,4 +46,5 @@ Route::middleware(['auth'])->group(function () {
   Route::post('/produto/storebrand', [ProductController::class, 'storebrand'])->name('produto.storebrand');
   Route::post('/produto/detachbrand', [ProductController::class, 'detachbrand'])->name('produto.detachbrand');
   Route::get('/counter', Counter::class)->name('counter');
+  Route::get('/produtos/{categoria}',ProductsList::class)->name('produtos.categoria');
 });

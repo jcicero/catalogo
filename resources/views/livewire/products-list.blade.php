@@ -28,26 +28,28 @@
           </thead>
           <tbody>
             @foreach ($products as $product)
-              <tr>
-                <td>{{ $product->category->categoria }}</td>
-                <td>{{ $product->codigo }}</td>
-                <td>{{ $product->resumida }}</td>
-                <td>{{ $product->descricao }}</td>
-                <td>{{ $product->apresentacao }}</td>
-                <td>
-                  @if ($product->photo)
-                    <a href="{{ url("storage/{$product->photo}") }}">
-                      <img src="{{ url("storage/{$product->photo}") }}?{{ rand() }}" width="500" height="500"
-                        class="img-thumbnail img-responsive" alt="...">
+              @if($product->category->categoria == $cat)
+                <tr>
+                  <td>{{ $product->category->categoria }}</td>
+                  <td>{{ $product->codigo }}</td>
+                  <td>{{ $product->resumida }}</td>
+                  <td>{{ $product->descricao }}</td>
+                  <td>{{ $product->apresentacao }}</td>
+                  <td>
+                    @if ($product->photo)
+                      <a href="{{ url("storage/{$product->photo}") }}">
+                        <img src="{{ url("storage/{$product->photo}") }}?{{ rand() }}" width="500" height="500"
+                          class="img-thumbnail img-responsive" alt="...">
+                      </a>
+                    @endif
+                  </td>
+                  <td>
+                    <a href="{{ route('produto.show', $product->id) }}">
+                      <i class="bi bi-eye-fill btn btn-outline-success btn-sm"></i>
                     </a>
-                  @endif
-                </td>
-                <td>
-                  <a href="{{ route('produto.show', $product->id) }}">
-                    <i class="bi bi-eye-fill btn btn-outline-success btn-sm"></i>
-                  </a>
-                </td>
-              </tr>
+                  </td>
+                </tr>
+              @endif
             @endforeach
 
           </tbody>

@@ -3,8 +3,9 @@
 namespace App\Http\Livewire;
 
 use App\Models\Product;
-use App\Models\Category;
 use Livewire\Component;
+use App\Models\Category;
+use Illuminate\Support\Facades\Route;
 
 class ProductsList extends Component
 {
@@ -12,21 +13,9 @@ class ProductsList extends Component
 
   public $search = '';
 
-  /*public function pesquisar()
-  {
-    $title = 'Produtos';
-    $product = Product::with('category')
-    ->where('category_id','=',2)
-    ->where('descricao', '~*', $this->search)
-    ->orWhere('resumida', '~*', $this->search)
-    ->orWhere('codigo', 'LIKE', "%{$this->search}%")->get();
-    $count = 1;
-*/
-    //return view('livewire.products-list', compact('product', 'count', 'title'));
- // }
-
   public function render()
   {
+    $cat = Route::current()->categoria;
     $categories = Category::all();
     $product = Product::with('category')
       ->orWhere(function($query) {
@@ -40,6 +29,7 @@ class ProductsList extends Component
     return view('livewire.products-list', [
       'products' => $product,
       'categories' => $categories,
+      'cat' => $cat
     ])
       ->extends('layouts.app')
       ->section('content');

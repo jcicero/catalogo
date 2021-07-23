@@ -54,8 +54,15 @@
               <li class="nav-item active">
                 <a class="nav-link" href="{{ route('home') }}">Início <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('produtos') }}">Produtos</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Produtos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {{-- <aclass="dropdown-item"href="route('produtos') }}">Todos</a>--}}
+                  <a class="dropdown-item" href="{{ route('produtos.categoria','Correlatos') }}">Correlatos</a>
+                  <a class="dropdown-item" href="{{ route('produtos.categoria','Medicamentos') }}">Medicamentos</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
