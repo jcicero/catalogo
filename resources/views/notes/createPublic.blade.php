@@ -75,7 +75,7 @@
                 <input type="hidden" name="isAceito" value=false>
 
                                     
-                <button class="btn btn-success form-control" type="submit"><i class="bi bi-image"></i> Salvar Notificação</button>
+                <button class="btn btn-success form-control" type="submit"><i class="bi bi-exclamation-circle-fill"></i> Enviar Notificação</button>
           
             </form>
           </div>

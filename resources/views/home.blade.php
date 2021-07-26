@@ -13,7 +13,7 @@
             </div>
             <ul class="list-group list-group-flush">
               @foreach ($notes as $note)
-              <li class="list-group-item">{{ $note->dtocorrencia . ' - ' . $note->produtodesc }}</li>
+              <li class="list-group-item">{{ $note->dtocorrencia . ' - ' . $note->produtodesc }} <a class="btn btn-primary btn-sm" href="#" role="button"> <i class="bi bi-check-square-fill"></i> Avaliar</a></li>
               @endforeach
             </ul>
           </div>
@@ -30,6 +30,7 @@
               </div>
             @endif
             <ul>
+              <li>Listar produtos por categoria</li>
               <li>Cadastro de Marcas</li>
               <li>Inclusão de fotos</li>
               <li>Marcas aprovadas por produto</li>

@@ -3,7 +3,7 @@
   <div class="col-md-12">
     <div class="card text-left">
       <div class="card-header">
-        <b>{{ $title }}</b>
+        <b>{{ $title }} - {{ Route::current()->categoria }}</b>
       </div>
       <div class="card-body">
         <p class="text-right">
@@ -17,7 +17,7 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th scope="col">Categoria</th>
+              {{-- <thscope="col">Categoria</th> --}}
               <th scope="col">Código</th>
               <th scope="col">Descrição Resumida</th>
               <th scope="col">Descrição Completa</th>
@@ -28,17 +28,16 @@
           </thead>
           <tbody>
             @foreach ($products as $product)
-              @if($product->category->categoria == $cat)
                 <tr>
-                  <td>{{ $product->category->categoria }}</td>
+                  {{-- <td>$product->categoria }}</td>--}}
                   <td>{{ $product->codigo }}</td>
                   <td>{{ $product->resumida }}</td>
                   <td>{{ $product->descricao }}</td>
                   <td>{{ $product->apresentacao }}</td>
                   <td>
-                    @if ($product->photo)
-                      <a href="{{ url("storage/{$product->photo}") }}">
-                        <img src="{{ url("storage/{$product->photo}") }}?{{ rand() }}" width="500" height="500"
+                    @if ($product->img_photo_path)
+                      <a href="{{ url("storage/{$product->img_photo_path}") }}">
+                        <img src="{{ url("storage/{$product->img_photo_path}") }}?{{ rand() }}" width="500" height="500"
                           class="img-thumbnail img-responsive" alt="...">
                       </a>
                     @endif
@@ -49,7 +48,6 @@
                     </a>
                   </td>
                 </tr>
-              @endif
             @endforeach
 
           </tbody>
