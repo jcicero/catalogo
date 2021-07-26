@@ -22,4 +22,9 @@ class Company extends Model
     {
         return $this->hasMany(Brand::class);
     }
+
+    public function getUrlAttribute($value)
+    {
+      return preg_replace("(^https?://)", "", $value );
+    }
 }

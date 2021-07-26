@@ -75,9 +75,9 @@
               <tr>
                 <td>{{ $company->cnpj }}</td>
                 <td>{{ $company->empresa }}</td>
-                <td>{{ $company->telefone }}</td>
-                <td>{{ $company->email }}</td>
-                <td>{{ $company->url }}</td>
+                <td><a href="tel:{{ $company->telefone }}">{{ $company->telefone }}</a></td>
+                <td><a href="mailto:{{ $company->email }}">{{ $company->email }}</a></td>
+                <td><a href="https://{{ $company->url }}">{{ $company->url }}</a></td>
                 <td>
                   <a href="{{ route('companies.show', $company->id) }}">
                     <i class="bi bi-eye-fill btn btn-outline-success btn-sm"></i>
