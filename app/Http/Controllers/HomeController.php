@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $notes = Note::where('isAceito',false)->get();
+      $notes = Note::where('isAceito',false)->orderByDesc('dtocorrencia')->get();
 
       return view('home',[
         'notes' => $notes

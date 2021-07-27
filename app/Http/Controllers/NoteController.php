@@ -61,6 +61,7 @@ class NoteController extends Controller
         'lote.required' => 'Informe o lote do produto',
         'validade.required' => 'Informe a validade do produto',
         'queixa.required' => 'Descreva sua queixa relacionada ao produto',
+        'marca.required' => 'Informe a marca',
 
     ];
 
@@ -72,7 +73,8 @@ class NoteController extends Controller
         'produtodesc' => 'required',
         'lote' => 'required',
         'validade' => 'required',
-        'queixa' => 'required'
+        'queixa' => 'required',
+        'marca' => 'required'
       ],$messages);
 
 
@@ -91,7 +93,16 @@ class NoteController extends Controller
 
     public function show($id)
     {
-        //
+      $title = 'Avaliar Notificação';
+      $note = Note::find($id);
+
+      $products = Product::where('active',true)->orderBy('descricao')->get();
+
+      return view('notes.show',[
+        'note' => $note,
+        'title' => $title,
+        'products' => $products
+      ]);
     }
 
     public function edit($id)

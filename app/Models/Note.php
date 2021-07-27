@@ -25,7 +25,8 @@ class Note extends Model
       'user_id',
       'email',
       'produtodesc',
-      'isAceito'
+      'isAceito',
+      'marca'
     ];
 
     public function brand()

@@ -13,7 +13,16 @@
             </div>
             <ul class="list-group list-group-flush">
               @foreach ($notes as $note)
-              <li class="list-group-item">{{ $note->dtocorrencia . ' - ' . $note->produtodesc }} <a class="btn btn-primary btn-sm" href="#" role="button"> <i class="bi bi-check-square-fill"></i> Avaliar</a></li>
+              <li class="list-group-item">
+                {{ $note->dtocorrencia . ' - ' . $note->produtodesc }} 
+                  <a 
+                    class="btn btn-primary btn-sm" 
+                    href="{{ route('notes.show', $note->id) }}" 
+                    role="button"> 
+                      <i class="bi bi-check-square-fill"></i> 
+                      Avaliar
+                  </a>
+              </li>
               @endforeach
             </ul>
           </div>

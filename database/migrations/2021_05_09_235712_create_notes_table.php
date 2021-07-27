@@ -29,6 +29,8 @@ class CreateNotesTable extends Migration
             $table->text('queixa');
             $table->text('email');
             $table->text('produtodesc');
+            $table->text('marca');
+            $table->boolean('isAceito');
             $table->foreignId('user_id')->constrained();
 
         });
